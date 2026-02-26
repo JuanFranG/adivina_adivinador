@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adivina el Número</title>
+    <!-- CSS - Cambiar entre franco.css y shania.css -->
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <div class="contenedor">
+        <header class="encabezado">
+            <h1>🎯 Adivina el Número</h1>
+            <p class="subtitulo">Estoy pensando en un número del 0 al 1000...</p>
+        </header>
+
+        <main class="juego">
+            <div class="estadisticas">
+                <div class="stat">
+                    <span class="stat-label">Intentos</span>
+                    <span class="stat-valor" id="intentos">0</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">Mejor Racha</span>
+                    <span class="stat-valor" id="mejor-racha">-</span>
+                </div>
+            </div>
+
+            <div class="indicador-distancia" id="indicador">
+                <span class="emoji">🤔</span>
+                <span class="mensaje">¡Ingresa tu primer número!</span>
+            </div>
+
+            <div class="entrada-grupo">
+                <input 
+                    type="number" 
+                    id="numero-input" 
+                    min="0" 
+                    max="1000" 
+                    placeholder="Escribe un número (0-1000)"
+                    autocomplete="off"
+                >
+                <button id="btn-adivinar" class="btn btn-principal">
+                    Adivinar
+                </button>
+            </div>
+
+            <div class="historial-contenedor">
+                <h3>Historial de intentos</h3>
+                <div class="historial" id="historial">
+                    <p class="historial-vacio">Aún no hay intentos</p>
+                </div>
+            </div>
+
+            <button id="btn-reiniciar" class="btn btn-secundario">
+                🔄 Nuevo Juego
+            </button>
+        </main>
+
+        <footer class="pie">
+            <p>Universidad del Magdalena</p>
+            <p>Curso: Clase de Programación web 2026-1</p>
+            <p>Desarrollado por: Juan Francisco González Pacheco - 2021114063</p>
+        </footer>
+    </div>
+
+    <script src="./js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,375 @@
+/* ============================================
+   FRANCO.CSS - Tema Oscuro Tecnológico
+   Colores: Azul eléctrico, púrpura, fondo oscuro
+   ============================================ */
+
+/* Variables de Franco */
+:root {
+    --franco-primario: #00d4ff;
+    --franco-secundario: #7c3aed;
+    --franco-acento: #f43f5e;
+    --franco-fondo: #0f172a;
+    --franco-fondo-card: #1e293b;
+    --franco-texto: #e2e8f0;
+    --franco-texto-secundario: #94a3b8;
+    --franco-borde: #334155;
+    --franco-exito: #10b981;
+    --franco-gradiente: linear-gradient(135deg, #00d4ff, #7c3aed);
+}
+
+/* Reset y base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--franco-fondo);
+    background-image: 
+        radial-gradient(circle at 20% 80%, rgba(124, 58, 237, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(0, 212, 255, 0.15) 0%, transparent 50%);
+    min-height: 100vh;
+    color: var(--franco-texto);
+    padding: 20px;
+}
+
+/* Contenedor principal */
+.contenedor {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Encabezado */
+.encabezado {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.encabezado h1 {
+    font-size: 2.5rem;
+    background: var(--franco-gradiente);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 10px;
+    text-shadow: 0 0 30px rgba(0, 212, 255, 0.3);
+}
+
+.subtitulo {
+    color: var(--franco-texto-secundario);
+    font-size: 1.1rem;
+}
+
+/* Área del juego */
+.juego {
+    background: var(--franco-fondo-card);
+    border-radius: 20px;
+    padding: 30px;
+    border: 1px solid var(--franco-borde);
+    box-shadow: 
+        0 25px 50px -12px rgba(0, 0, 0, 0.5),
+        0 0 0 1px rgba(0, 212, 255, 0.1);
+}
+
+/* Estadísticas */
+.estadisticas {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 25px;
+}
+
+.stat {
+    text-align: center;
+    padding: 15px 25px;
+    background: rgba(0, 212, 255, 0.1);
+    border-radius: 12px;
+    border: 1px solid rgba(0, 212, 255, 0.2);
+}
+
+.stat-label {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--franco-texto-secundario);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+.stat-valor {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--franco-primario);
+}
+
+/* Indicador de distancia */
+.indicador-distancia {
+    text-align: center;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 15px;
+    background: rgba(124, 58, 237, 0.1);
+    border: 2px solid var(--franco-secundario);
+    transition: all 0.4s ease;
+}
+
+.indicador-distancia .emoji {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.indicador-distancia .mensaje {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+/* Clases de temperatura */
+.indicador-distancia.muy-caliente,
+.indicador-distancia.caliente,
+.indicador-distancia.tibio-caliente {
+    animation: pulso-caliente 0.5s ease;
+}
+
+.indicador-distancia.exacto {
+    animation: celebrar 0.6s ease;
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.3), rgba(0, 212, 255, 0.3)) !important;
+}
+
+@keyframes pulso-caliente {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+}
+
+@keyframes celebrar {
+    0%, 100% { transform: scale(1) rotate(0deg); }
+    25% { transform: scale(1.05) rotate(-2deg); }
+    75% { transform: scale(1.05) rotate(2deg); }
+}
+
+/* Entrada de número */
+.entrada-grupo {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+#numero-input {
+    flex: 1;
+    padding: 15px 20px;
+    font-size: 1.2rem;
+    border: 2px solid var(--franco-borde);
+    border-radius: 12px;
+    background: var(--franco-fondo);
+    color: var(--franco-texto);
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+#numero-input:focus {
+    border-color: var(--franco-primario);
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+}
+
+#numero-input::placeholder {
+    color: var(--franco-texto-secundario);
+}
+
+/* Botones */
+.btn {
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-principal {
+    background: var(--franco-gradiente);
+    color: white;
+    box-shadow: 0 4px 15px rgba(0, 212, 255, 0.4);
+}
+
+.btn-principal:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(0, 212, 255, 0.5);
+}
+
+.btn-principal:active {
+    transform: translateY(0);
+}
+
+.btn-secundario {
+    width: 100%;
+    background: transparent;
+    color: var(--franco-texto-secundario);
+    border: 2px solid var(--franco-borde);
+    margin-top: 20px;
+}
+
+.btn-secundario:hover {
+    border-color: var(--franco-acento);
+    color: var(--franco-acento);
+    background: rgba(244, 63, 94, 0.1);
+}
+
+/* Historial */
+.historial-contenedor {
+    margin-top: 25px;
+}
+
+.historial-contenedor h3 {
+    color: var(--franco-texto-secundario);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.historial {
+    max-height: 250px;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+.historial::-webkit-scrollbar {
+    width: 6px;
+}
+
+.historial::-webkit-scrollbar-track {
+    background: var(--franco-fondo);
+    border-radius: 3px;
+}
+
+.historial::-webkit-scrollbar-thumb {
+    background: var(--franco-secundario);
+    border-radius: 3px;
+}
+
+.historial-vacio {
+    text-align: center;
+    color: var(--franco-texto-secundario);
+    font-style: italic;
+    padding: 20px;
+}
+
+.historial-item {
+    display: grid;
+    grid-template-columns: 80px 1fr auto;
+    gap: 15px;
+    align-items: center;
+    padding: 12px 15px;
+    margin-bottom: 10px;
+    background: var(--franco-fondo);
+    border-radius: 10px;
+    border-left: 4px solid var(--franco-borde);
+    animation: aparecer 0.3s ease;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.historial-numero {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: var(--franco-primario);
+}
+
+.historial-pista {
+    font-size: 0.9rem;
+    color: var(--franco-texto-secundario);
+}
+
+.historial-direccion {
+    font-size: 0.85rem;
+    padding: 5px 10px;
+    background: rgba(124, 58, 237, 0.2);
+    border-radius: 20px;
+    color: var(--franco-secundario);
+}
+
+/* Colores del historial según temperatura */
+.historial-item.muy-caliente,
+.historial-item.caliente { border-left-color: #ff4500; }
+.historial-item.tibio-caliente { border-left-color: #ff6600; }
+.historial-item.tibio { border-left-color: #ffaa00; }
+.historial-item.templado { border-left-color: #ffdd00; }
+.historial-item.fresco { border-left-color: #aaddff; }
+.historial-item.frio { border-left-color: #66bbff; }
+.historial-item.muy-frio { border-left-color: #3399ff; }
+.historial-item.congelado { border-left-color: #0066cc; }
+.historial-item.exacto { border-left-color: var(--franco-exito); background: rgba(16, 185, 129, 0.2); }
+
+/* Pie de página */
+.pie {
+    text-align: center;
+    margin-top: 30px;
+    color: var(--franco-texto-secundario);
+    font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+    .encabezado h1 {
+        font-size: 1.8rem;
+    }
+    
+    .entrada-grupo {
+        flex-direction: column;
+    }
+    
+    .estadisticas {
+        gap: 20px;
+    }
+    
+    .stat {
+        padding: 10px 20px;
+    }
+    
+    .historial-item {
+        grid-template-columns: 60px 1fr;
+        gap: 10px;
+    }
+    
+    .historial-direccion {
+        grid-column: 1 / -1;
+        justify-self: start;
+    }
+}
+
+/* Estilos para SweetAlert personalizados */
+.swal2-popup {
+    background: var(--franco-fondo-card) !important;
+    color: var(--franco-texto) !important;
+    border: 1px solid var(--franco-borde) !important;
+}
+
+.swal2-title {
+    color: var(--franco-primario) !important;
+}
+
+.swal2-html-container {
+    color: var(--franco-texto) !important;
+}
+
+.nuevo-record {
+    color: #fbbf24;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
