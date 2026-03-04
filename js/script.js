@@ -99,56 +99,56 @@ $(document).ready(function() {
             return {
                 clase: 'muy-caliente',
                 emoji: '🔥🔥🔥',
-                mensaje: '¡ARDIENDO! Estás a menos de 5',
+                mensaje: '¡ARDIENDO! Estás a menos de 2',
                 color: '#ff0000'
             };
         } else if (diferencia <= 10) {
             return {
                 clase: 'caliente',
                 emoji: '🔥🔥',
-                mensaje: '¡MUY CALIENTE! Estás a menos de 15',
+                mensaje: '¡MUY CALIENTE! Estás a menos de 10',
                 color: '#ff4500'
             };
         } else if (diferencia <= 15) {
             return {
                 clase: 'tibio-caliente',
                 emoji: '🔥',
-                mensaje: '¡CALIENTE! Estás a menos de 30',
+                mensaje: '¡CALIENTE! Estás a menos de 20',
                 color: '#ff6600'
             };
         } else if (diferencia <= 30) {
             return {
                 clase: 'tibio',
                 emoji: '😊',
-                mensaje: 'TIBIO. Estás a menos de 50',
+                mensaje: 'TIBIO. Estás a menos de 35',
                 color: '#ffaa00'
             };
         } else if (diferencia <= 45) {
             return {
                 clase: 'templado',
                 emoji: '🤔',
-                mensaje: 'TEMPLADO. Estás a menos de 100',
+                mensaje: 'TEMPLADO. Estás a menos de 50',
                 color: '#ffdd00'
             };
         } else if (diferencia <= 50) {
             return {
                 clase: 'fresco',
                 emoji: '😐',
-                mensaje: 'FRESCO. Estás a menos de 200',
+                mensaje: 'FRESCO. Estás a menos de 60',
                 color: '#aaddff'
             };
         } else if (diferencia <= 60) {
             return {
                 clase: 'frio',
                 emoji: '❄️',
-                mensaje: 'FRÍO. Estás a menos de 350',
+                mensaje: 'FRÍO. Estás a menos de 70',
                 color: '#66bbff'
             };
         } else if (diferencia <= 70) {
             return {
                 clase: 'muy-frio',
                 emoji: '❄️❄️',
-                mensaje: '¡MUY FRÍO! Estás a menos de 500',
+                mensaje: '¡MUY FRÍO! Estás a menos de 80',
                 color: '#3399ff'
             };
         } else {
