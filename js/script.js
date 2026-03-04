@@ -4,7 +4,7 @@ $(document).ready(function() {
     let numeroSecreto = generarNumero();
     let intentos = 0;
     let juegoTerminado = false;
-    let mejorAproximacion = 1000;
+    let mejorAproximacion = 100;
     let historialIntentos = []; // Array para guardar el historial
     let mejorRacha = localStorage.getItem('mejorRacha') || null;
     
@@ -18,7 +18,7 @@ $(document).ready(function() {
     
     // Función para generar número aleatorio
     function generarNumero() {
-        return Math.floor(Math.random() * 1001);
+        return Math.floor(Math.random() * 101);
     }
     
     // Función para guardar historial en sessionStorage
@@ -76,7 +76,7 @@ $(document).ready(function() {
     
     // Función para calcular porcentaje de cercanía
     function calcularPorcentajeCercania(mejorDiferencia) {
-        const porcentaje = ((1000 - mejorDiferencia) / 1000) * 100;
+        const porcentaje = ((100 - mejorDiferencia) / 100) * 100;
         return porcentaje.toFixed(1);
     }
     
@@ -95,56 +95,56 @@ $(document).ready(function() {
                 mensaje: '¡EXACTO! ¡Lo adivinaste!',
                 color: '#00ff00'
             };
-        } else if (diferencia <= 5) {
+        } else if (diferencia <= 1) {
             return {
                 clase: 'muy-caliente',
                 emoji: '🔥🔥🔥',
                 mensaje: '¡ARDIENDO! Estás a menos de 5',
                 color: '#ff0000'
             };
-        } else if (diferencia <= 15) {
+        } else if (diferencia <= 10) {
             return {
                 clase: 'caliente',
                 emoji: '🔥🔥',
                 mensaje: '¡MUY CALIENTE! Estás a menos de 15',
                 color: '#ff4500'
             };
-        } else if (diferencia <= 30) {
+        } else if (diferencia <= 15) {
             return {
                 clase: 'tibio-caliente',
                 emoji: '🔥',
                 mensaje: '¡CALIENTE! Estás a menos de 30',
                 color: '#ff6600'
             };
-        } else if (diferencia <= 50) {
+        } else if (diferencia <= 30) {
             return {
                 clase: 'tibio',
                 emoji: '😊',
                 mensaje: 'TIBIO. Estás a menos de 50',
                 color: '#ffaa00'
             };
-        } else if (diferencia <= 100) {
+        } else if (diferencia <= 45) {
             return {
                 clase: 'templado',
                 emoji: '🤔',
                 mensaje: 'TEMPLADO. Estás a menos de 100',
                 color: '#ffdd00'
             };
-        } else if (diferencia <= 200) {
+        } else if (diferencia <= 50) {
             return {
                 clase: 'fresco',
                 emoji: '😐',
                 mensaje: 'FRESCO. Estás a menos de 200',
                 color: '#aaddff'
             };
-        } else if (diferencia <= 350) {
+        } else if (diferencia <= 60) {
             return {
                 clase: 'frio',
                 emoji: '❄️',
                 mensaje: 'FRÍO. Estás a menos de 350',
                 color: '#66bbff'
             };
-        } else if (diferencia <= 500) {
+        } else if (diferencia <= 70) {
             return {
                 clase: 'muy-frio',
                 emoji: '❄️❄️',
@@ -325,11 +325,11 @@ $(document).ready(function() {
         
         const numero = parseInt(valor);
         
-        if (isNaN(numero) || numero < 0 || numero > 1000) {
+        if (isNaN(numero) || numero < 0 || numero > 100) {
             Swal.fire({
                 icon: 'error',
                 title: 'Número inválido',
-                text: 'El número debe estar entre 0 y 1000',
+                text: 'El número debe estar entre 0 y 100',
                 confirmButtonColor: '#d33'
             });
             return;
@@ -380,7 +380,7 @@ $(document).ready(function() {
         numeroSecreto = generarNumero();
         intentos = 0;
         juegoTerminado = false;
-        mejorAproximacion = 1000;
+        mejorAproximacion = 100;
         historialIntentos = []; // Limpiar historial de la partida actual
         
         $('#intentos').text('0/' + MAX_INTENTOS);
@@ -395,7 +395,7 @@ $(document).ready(function() {
         Swal.fire({
             icon: 'info',
             title: '¡Nuevo juego!',
-            text: 'He pensado en un nuevo número del 0 al 1000',
+            text: 'He pensado en un nuevo número del 0 al 100',
             timer: 1500,
             showConfirmButton: false
         });
@@ -501,7 +501,7 @@ $(document).ready(function() {
     Swal.fire({
         title: '¡Bienvenido al juego!',
         html: `
-            <p>He pensado en un número del <strong>0 al 1000</strong></p>
+            <p>He pensado en un número del <strong>0 al 100</strong></p>
             <p>Tienes <strong>${MAX_INTENTOS} intentos</strong> para adivinarlo</p>
             <p style="margin-top: 10px;">Te daré pistas de qué tan cerca estás:</p>
             <p>🥶 Congelado → 🔥🔥🔥 Ardiendo</p>
